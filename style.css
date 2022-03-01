@@ -1,0 +1,88 @@
+:root {
+    --clr2: #364F6B;
+    --clr1: #000;
+    --clr3: #1f2833;
+    --clr4: #00ccff;
+    --clr5: #102b47;
+    --clr6: #fff;
+}
+* {
+    padding: 0;
+    margin: 0;
+    color: var(--clr4);
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.game {
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    background: var(--clr2);
+    padding-bottom: 20px;
+}
+.nav {
+    min-height: 70px;
+    width: 100vw;
+    background:;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.reset,.time,.moves {
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: 0px solid var(--clr6);
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 100px;
+    padding: 10px 5px;
+    margin-top: 10px;
+    background: var(--clr3);
+    border-radius: 10px;
+}
+.board {
+    background: var(--clr1);
+    margin: 30px auto auto auto;
+    border: 0px solid var(--clr6);
+    position: relative;
+    box-sizing: border-box;
+    width: 96vmin;
+    height: 96vmin;
+    border-radius: 10px;
+    box-sizing: initial;
+    margin-bottom: 30px;
+}
+.block {
+    height: 24vmin;
+    width: 24vmin;
+    background: var(--clr3);
+    box-sizing: border-box;
+    border: 4px solid var(--clr1);
+    top: 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    left: 0;
+    position: absolute;
+    transition: 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 3rem;
+    font-weight: 1000;
+    touch-action: none;
+}
+@media only screen and (max-width:600px) {
+    .block {
+        font-size: 1.5rem;
+    }
+    .nav  > * {
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-width:600px) {}
+@media only screen and (orientation:landscape) {
+    .nav {}
+}
