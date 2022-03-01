@@ -9,7 +9,7 @@ var interval;
 var firstMove = true;
 const timeDiv = document.getElementById("time");
 const board = document.getElementById("board");
-var val = [0,1,2,3];
+var val = [0, 1, 2, 3];
 var int = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 var intcorrect = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 var x = [val[0], val[1], val[2], val[3], val[0], val[1], val[2], val[3], val[0], val[1], val[2], val[3], val[0], val[1], val[2], val[3]];
@@ -17,6 +17,11 @@ var y = [val[0], val[0], val[0], val[0], val[1], val[1], val[1], val[1], val[2],
 var markup = function(i) {
     return `<div class="block" id="block${i}">${i}</div>`
 }
+
+
+const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+
 function shuffle(array) {
     var currentIndex = array.length,
     temporaryValue,
@@ -37,8 +42,16 @@ async function setblocks() {
     shuffle(int);
     for (var i = 0; i < 15; i++) {
         var block = document.getElementById("block"+(i+1));
-        block.style.top = `min(${gap*y[int[i]]}vmin,${150*y[int[i]]}px`;
-        block.style.left = `min(${gap*x[int[i]]}vmin,${150*x[int[i]]}px`;
+        if (vw >= 800 && vh >= 600) {
+
+            block.style.top = `min(${gap*y[int[i]]}vmin,${150*y[int[i]]}px`;
+            block.style.left = `min(${gap*x[int[i]]}vmin,${150*x[int[i]]}px`;
+
+        } else {
+            block.style.top = `${gap*y[int[i]]}vmin`;
+            block.style.left = `${gap*x[int[i]]}vmin`;
+        }
+
     }
     for (i = 0; i < 4; i++) {
         if (val[i] == x[int[15]]) {
