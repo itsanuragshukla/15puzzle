@@ -54,6 +54,8 @@
     border-radius: 10px;
     box-sizing: initial;
     margin-bottom: 30px;
+    max-height: 600px;
+    max-width: 600px;
 }
 .block {
     height: 24vmin;
@@ -81,6 +83,17 @@
     .nav  > * {
         font-size: 1rem;
     }
+}
+@media only screen and (min-width:800px) and (orientation:landscape) {
+    .nav > * {
+        font-size: 2rem;
+        min-width: 150px;
+        min-height: 50px;
+    }
+
+}
+@media only screen and (min-width:1000px) {
+    
 }
 @media only screen and (max-width:600px) {}
 @media only screen and (orientation:landscape) {
