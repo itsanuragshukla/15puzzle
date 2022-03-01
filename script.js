@@ -4,11 +4,12 @@ var emptyx;
 var emptyy;
 var prevx;
 var prevy;
+const gap = 24;
 var interval;
 var firstMove = true;
 const timeDiv = document.getElementById("time");
 const board = document.getElementById("board");
-var val = ["0vmin", "24vmin", "48vmin", "72vmin"];
+var val = [0,1,2,3];
 var int = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 var intcorrect = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 var x = [val[0], val[1], val[2], val[3], val[0], val[1], val[2], val[3], val[0], val[1], val[2], val[3], val[0], val[1], val[2], val[3]];
@@ -36,8 +37,8 @@ async function setblocks() {
     shuffle(int);
     for (var i = 0; i < 15; i++) {
         var block = document.getElementById("block"+(i+1));
-        block.style.top = `min(${y[int[i]]},150px`;
-        block.style.left = `min(${x[int[i]]},150px)`;
+        block.style.top = `min(${gap*y[int[i]]}vmin,${150*y[int[i]]}px`;
+        block.style.left = `min(${gap*x[int[i]]}vmin,${150*x[int[i]]}px`;
     }
     for (i = 0; i < 4; i++) {
         if (val[i] == x[int[15]]) {
