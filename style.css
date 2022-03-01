@@ -54,6 +54,7 @@
     border-radius: 10px;
     box-sizing: initial;
     margin-bottom: 30px;
+    
 }
 .block {
     height: 24vmin;
@@ -73,8 +74,6 @@
     font-size: 3rem;
     font-weight: 1000;
     touch-action: none;
-    max-height: 150px;
-    max-width: 150px;
 }
 @media only screen and (max-width:600px) {
     .block {
@@ -84,7 +83,7 @@
         font-size: 1rem;
     }
 }
-@media only screen and (min-width:800px) and (orientation:landscape) {
+@media only screen and (min-width:800px) and (min-height:600px) and (orientation:landscape) {
     .nav > * {
         font-size: 2rem;
         min-width: 150px;
@@ -93,6 +92,12 @@
     .board {
         max-height: 600px;
         max-width: 600px;
+    }
+    
+    .block{
+            max-height: 150px;
+    max-width: 150px;
+
     }
     
 
