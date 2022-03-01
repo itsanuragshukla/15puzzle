@@ -97,6 +97,7 @@
     .nav > * {
         font-size: 2rem;
         width: auto;
+        min-width: 150px;
         min-height: 50px;
         margin-top: 15px;
     }
@@ -112,11 +113,11 @@
     }
 */
     .board {
-        margin: 2vmin auto 2vmin auto;
     }
     .game {
         height: 100vh;
         padding: 0;
+        justify-content: center;
     }
 
 
@@ -124,6 +125,4 @@
 }
 @media only screen and (min-width:1000px) {}
 @media only screen and (max-width:600px) {}
-@media only screen and (orientation:landscape) {
-    .nav {}
-}
+@media only screen and (orientation:landscape) {}
