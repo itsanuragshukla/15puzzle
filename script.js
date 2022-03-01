@@ -9,7 +9,8 @@ var interval;
 var firstMove = true;
 const timeDiv = document.getElementById("time");
 const board = document.getElementById("board");
-var val = [0, 1, 2, 3];
+var maxVal = ["0px", "150px", "300px", "450px"];
+var val = ["0vmin","24vmin","48vmin","72vmin"];
 var int = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 var intcorrect = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 var x = [val[0], val[1], val[2], val[3], val[0], val[1], val[2], val[3], val[0], val[1], val[2], val[3], val[0], val[1], val[2], val[3]];
@@ -44,13 +45,11 @@ async function setblocks() {
         var block = document.getElementById("block"+(i+1));
         if (vw >= 800 && vh >= 600) {
 
-            block.style.top = `min(${gap*y[int[i]]}vmin,${150*y[int[i]]}px`;
-            block.style.left = `min(${gap*x[int[i]]}vmin,${150*x[int[i]]}px`;
+        val = maxVal.slice();
 
-        } else {
-            block.style.top = `${gap*y[int[i]]}vmin`;
-            block.style.left = `${gap*x[int[i]]}vmin`;
-        }
+        } 
+            block.style.top = y[int[i]];
+            block.style.left = x[int[i]];
 
     }
     for (i = 0; i < 4; i++) {
