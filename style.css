@@ -57,7 +57,6 @@
     height: 96vmin;
     border-radius: 10px;
     box-sizing: initial;
-    margin-bottom: 30px;
 
 }
 .block {
@@ -90,11 +89,15 @@
 @media only screen and (min-width:800px) and (min-height:600px) and (orientation:landscape) {
     .nav {
         width: calc(100vw - 100vmin);
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
     }
     .nav > * {
         font-size: 2rem;
         width: auto;
         min-height: 50px;
+        margin-top: 15px;
     }
     /*   .board {
         max-height: 600px;
@@ -107,7 +110,13 @@
 
     }
 */
-    .game {}
+.board{
+    margin: 0;
+}
+    .game {
+        height: 100vh;
+        padding: 0;
+    }
 
 
 
