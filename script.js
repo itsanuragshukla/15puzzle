@@ -36,8 +36,8 @@ async function setblocks() {
     shuffle(int);
     for (var i = 0; i < 15; i++) {
         var block = document.getElementById("block"+(i+1));
-        block.style.top = y[int[i]];
-        block.style.left = x[int[i]];
+        block.style.top = `min(${y[int[i]]},150px`;
+        block.style.left = `min(${x[int[i]]},150px)`;
     }
     for (i = 0; i < 4; i++) {
         if (val[i] == x[int[15]]) {
